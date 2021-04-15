@@ -1,0 +1,29 @@
+.Home{
+    height:100vh;
+    width: 100%;
+    background-color: #a7a1a0;
+}
+.Home .generator-output-div{
+    background-color: #5efda0;
+}
+.Home ul{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+.Home button{
+    font-size: large;
+    font-weight: 600;
+    height: 50px;
+    width: 250px;
+    background-color: #cb9f01;
+}
+.colorscheme{
+    color: #a7a1a0;
+    color: #393a10;
+    color: #cb9f01;
+    color: #d1cac7;
+    color: #5efda0;
+}

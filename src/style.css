@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    border: 1px solid red;
+    border: none;
+}
+.colorscheme{
+    color: #a7a1a0;
+    color: #393a10;
+    color: #cb9f01;
+    color: #d1cac7;
+    color: #5efda0;
+}
+body{
+    margin: 0;
+}
+.app{
+    padding: 10px;
+    height:100%;
+    width: 100%;
+    background-color: #393a10;
+}

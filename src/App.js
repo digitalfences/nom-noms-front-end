@@ -1,51 +1,34 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.css";
-import Header from "./Header.js";
-import Forms from "./Forms.js";
-import CreateUser from "./CreateUser.js";
+import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
-import Body from "./Body";
+import Onboarding from "./Onboarding/index.js";
+import Home from './Home/index.js';
+/*
+App starts on splash page if a user isn't logged in. 
+Splash page allows for logging in or registering.
+If registering is selected, component swaps out.
+*/
+function App() {
+  return (<div className="app">
+  <Route
+    path="/home"
+    exact
+    render={routerProps=> (
+      <Home></Home>
+    )}
+  ></Route>
+  <Route
+    path="/"
+    exact
+    render={routerProps=> (
+      <Onboarding>
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Username: "",
-      Password: "",
-      profiles: [],
-    };
-    this.setProfiles = this.setProfiles.bind(this);
-  }
-  setProfiles(profiles) {
-    this.setState({ profiles: profiles });
-  }
+      </Onboarding>
+    )}>
 
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Header />
-          <div className="login">
-            <Route path="/" exact component={Forms} />
-            <Route path="/" exact component={CreateUser} />
-
-            <Route
-              path="/user"
-              render={(routerProps) => (
-                <Body
-                  setProfiles={this.setProfiles}
-                  addUser={this.usernameCreated}
-                  {...routerProps}
-                  {...this.state}
-                />
-              )}
-            />
-          </div>
-        </div>
-      </Router>
-    );
-  }
+  </Route>
+  </div>
+  )
 }
 
 export default App;
